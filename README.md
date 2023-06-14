@@ -1,9 +1,18 @@
 # Letter Predictor
-Using a linear regression model and publicly available data, my code predicts the final letter in five-letter words.
+Using a linear regression model and publicly available data, my code predicts the final letter in five-letter words. The accuracy is ~20% which is significantly greater than a random algorithm (~3.8%).
+
+## How it works
+
+There are two files that do significant work to create the model in this repository:
+
+<ol>
+  <li><b>words_to_tensorflow_readable.c:</b> a file written in C that takes the exel file in the oldCSVfiles folder containing common words and their part of speech (<b>wordFrequency.csv</b>) and creates a new csv in a format that is easily used by tensorflow (ASCII numbers instead of letters and a different column for each letter). By modifying the the global variables for the start line and end line in the top of the C file, I was able to create <b>training.csv</b> and <b>eval.csv</b> (one file to train the model and the other to evaluate it). For the output that would contain all the lines of the file, I have included <b>output.csv</b> in the oldCSVfiles folder.</li>
+  <li><b>letterpredictor.ipynb:</b> the notebook that contains the code that trains and evaluates the linear-regression model. Linear-regresssion is a common machine learning algorithm that can predict outcomes based on a labeled dataset like the one in this example.</li>
+</ol>
 
 ## Preformance
 
-Overall, the model was able to preform at about 20% accuracy (more consistently a bit lower though at ~18%) which is pretty strong considering that a randomly-choosing model would preform at only about ~3.8%. This accuracy demonstrates strong and impressive preformance considering the size of the dataset and the challenge of the problem.
+Overall, the model was able to preform at about 20% accuracy (more consistently at a bit lower though at ~18%) which is pretty strong considering that a randomly-choosing model would preform at only about ~3.8%. This accuracy demonstrates strong and impressive preformance considering the size of the dataset and the challenge of the problem.
 
 <img width="730" alt="Screenshot 2023-06-13 at 5 58 59 PM" src="https://github.com/zroe1/letterPredictor/assets/114773939/00ed51e2-bb3d-40f6-abaf-2bb8dbc23b7a">
 
