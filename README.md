@@ -1,6 +1,10 @@
 # Letter Predictor
 Using a linear regression model and publicly available data, my code predicts the final letter in five-letter words. The accuracy is ~20% which is significantly greater than a random algorithm (~3.8%).
 
+## Motivation
+
+With modern transformer models (GTP-4, Claude, ect.), AI labs have found clever solutions for accurately predicting the next word in a sequence. In this respository, I test a similar idea with a regression model. I wondered if could a regression model also predict the next character? To test this out I provided the model with a small amount of data, trained it and recorded the results. 
+
 ## How it works
 
 There are two files that do significant work to create the model in this repository:
